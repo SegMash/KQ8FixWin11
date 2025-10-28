@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="common">
+      <UniqueIdentifier>{587df4fa-e3d0-4256-b6b0-70d63ef85884}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="res">
+      <UniqueIdentifier>{f0d10f33-86fc-4043-b138-1063c9efd9a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="res\common">
+      <UniqueIdentifier>{771ca142-422c-4312-8321-03e1b4e494b0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\common\kqf_app.c">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\kqf_cfg.c">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\kqf_init.c">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\kqf_log.c">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="hook_cdrom.c" />
+    <ClCompile Include="hook_gfx.c" />
+    <ClCompile Include="hook_memory.c" />
+    <ClCompile Include="hook_shim.c" />
+    <ClCompile Include="hook_talk.c" />
+    <ClCompile Include="hook_talk.cpp" />
+    <ClCompile Include="hook_video.c" />
+    <ClCompile Include="hook_window.c" />
+    <ClCompile Include="runtime.c" />
+    <ClCompile Include="hook_memory.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\common\kqf_app.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\kqf_cfg.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\kqf_init.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\kqf_log.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\kqf_win.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\kqf_ver.h">
+      <Filter>res\common</Filter>
+    </ClInclude>
+    <ClInclude Include="hook_cdrom.h" />
+    <ClInclude Include="hook_gfx.h" />
+    <ClInclude Include="hook_memory.h" />
+    <ClInclude Include="hook_shim.h" />
+    <ClInclude Include="hook_talk.h" />
+    <ClInclude Include="hook_talk.hpp" />
+    <ClInclude Include="hook_video.h" />
+    <ClInclude Include="hook_window.h" />
+    <ClInclude Include="runtime.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="runtime.de-DE.rc">
+      <Filter>res</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="runtime.en-US.rc">
+      <Filter>res</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="runtime.es-ES.rc">
+      <Filter>res</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="runtime.fr-FR.rc">
+      <Filter>res</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="runtime.it-IT.rc">
+      <Filter>res</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="runtime.pt-BR.rc">
+      <Filter>res</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="runtime.rc">
+      <Filter>res</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="runtime.rh">
+      <Filter>res</Filter>
+    </None>
+  </ItemGroup>
+</Project>

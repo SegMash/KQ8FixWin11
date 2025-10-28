@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="Debug in Game directory"
+	OutputDirectory="$(MaskRoot)"
+	>
+	<UserMacro
+		Name="MaskRoot"
+		Value="C:\Games\KQ8"
+		PerformEnvironmentSet="true"
+	/>
+</VisualStudioPropertySheet>

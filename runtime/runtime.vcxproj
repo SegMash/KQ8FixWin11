@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="debug|Win32">
+      <Configuration>debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="release|Win32">
+      <Configuration>release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{A2BCC59F-4A3D-4286-A43D-32E114D21B3F}</ProjectGuid>
+    <RootNamespace>runtime</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\debug.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>17.0.36327.8</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">
+    <IntDir>..\build\$(Configuration)\$(ProjectName)\</IntDir>
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+    <LinkIncremental>false</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'">
+    <OutDir>..\bin\</OutDir>
+    <IntDir>..\build\$(Configuration)\$(ProjectName)\</IntDir>
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+    <LinkIncremental>false</LinkIncremental>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/Wall /wd4711 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>KQF_RUNTIME;WIN32;_DEBUG;KQF_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>CompileAsC</CompileAs>
+      <CallingConvention>FastCall</CallingConvention>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <EnableModules>false</EnableModules>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>KQF_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>msvcrt42.lib;kernel32.lib;user32.lib;gdi32.lib;version.lib;vfw32.lib;winmm.lib;shell32.lib</AdditionalDependencies>
+      <OutputFile>$(OutDir)kq8fix.dll</OutputFile>
+      <AdditionalLibraryDirectories>..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(IntDir)kq8fix_$(ProjectName).pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>DllMain</EntryPointSymbol>
+      <BaseAddress>0x008D0000</BaseAddress>
+      <ImportLibrary>$(IntDir)kq8fix_$(ProjectName).lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+    <PostBuildEvent>
+      <Message>Code signing...</Message>
+      <Command>CALL ..\sign\codesign.bat $(TargetPath)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/Wall /wd4711 %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>KQF_RUNTIME;WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <WarningLevel>Level4</WarningLevel>
+      <CompileAs>CompileAsC</CompileAs>
+      <OmitDefaultLibName>true</OmitDefaultLibName>
+      <CallingConvention>FastCall</CallingConvention>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <EnableModules>false</EnableModules>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>msvcrt42.lib;kernel32.lib;user32.lib;gdi32.lib;version.lib;vfw32.lib;winmm.lib;shell32.lib</AdditionalDependencies>
+      <OutputFile>$(OutDir)kq8fix.dll</OutputFile>
+      <AdditionalLibraryDirectories>..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <EntryPointSymbol>DllMain</EntryPointSymbol>
+      <SetChecksum>true</SetChecksum>
+      <BaseAddress>0x008D0000</BaseAddress>
+      <ImportLibrary>$(IntDir)kq8fix_$(ProjectName).lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+    <PostBuildEvent>
+      <Message>Code signing...</Message>
+      <Command>CALL ..\sign\codesign.bat $(TargetPath)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\common\kqf_app.c" />
+    <ClCompile Include="..\common\kqf_cfg.c" />
+    <ClCompile Include="..\common\kqf_init.c" />
+    <ClCompile Include="..\common\kqf_log.c" />
+    <ClCompile Include="hook_cdrom.c" />
+    <ClCompile Include="hook_gfx.c" />
+    <ClCompile Include="hook_memory.c" />
+    <ClCompile Include="hook_memory.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">$(IntDir)%(Filename)_cpp.obj</ObjectFileName>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">CompileAsCpp</CompileAs>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='release|Win32'">$(IntDir)%(Filename)_cpp.obj</ObjectFileName>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='release|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="hook_shim.c" />
+    <ClCompile Include="hook_talk.c" />
+    <ClCompile Include="hook_talk.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">$(IntDir)%(Filename)_cpp.obj</ObjectFileName>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">CompileAsCpp</CompileAs>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='release|Win32'">$(IntDir)%(Filename)_cpp.obj</ObjectFileName>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='release|Win32'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="hook_video.c" />
+    <ClCompile Include="hook_window.c" />
+    <ClCompile Include="runtime.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\common\kqf_app.h" />
+    <ClInclude Include="..\common\kqf_cfg.h" />
+    <ClInclude Include="..\common\kqf_init.h" />
+    <ClInclude Include="..\common\kqf_log.h" />
+    <ClInclude Include="..\common\kqf_ver.h" />
+    <ClInclude Include="..\common\kqf_win.h" />
+    <ClInclude Include="hook_cdrom.h" />
+    <ClInclude Include="hook_gfx.h" />
+    <ClInclude Include="hook_memory.h" />
+    <ClInclude Include="hook_shim.h" />
+    <ClInclude Include="hook_talk.h" />
+    <ClInclude Include="hook_talk.hpp" />
+    <ClInclude Include="hook_video.h" />
+    <ClInclude Include="hook_window.h" />
+    <ClInclude Include="runtime.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="runtime.de-DE.rc" />
+    <ResourceCompile Include="runtime.en-US.rc" />
+    <ResourceCompile Include="runtime.es-ES.rc" />
+    <ResourceCompile Include="runtime.fr-FR.rc" />
+    <ResourceCompile Include="runtime.it-IT.rc" />
+    <ResourceCompile Include="runtime.pt-BR.rc" />
+    <ResourceCompile Include="runtime.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="runtime.rh" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VisualStudioUserFile
+	ProjectType="Visual C++"
+	Version="8.00"
+	>
+	<Configurations>
+		<Configuration
+			Name="debug|Win32"
+			>
+			<DebugSettings
+				Command="$(MaskRoot)/Mask.exe"
+				WorkingDirectory="$(MaskRoot)"
+			/>
+		</Configuration>
+	</Configurations>
+</VisualStudioUserFile>

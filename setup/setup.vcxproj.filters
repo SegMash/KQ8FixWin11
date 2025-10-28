@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="common">
+      <UniqueIdentifier>{00485d94-4124-4229-bdc1-6227f7264015}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="res">
+      <UniqueIdentifier>{64419319-8419-4782-94fa-312015cd1702}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="res\common">
+      <UniqueIdentifier>{9b35463d-0d3b-4c3c-8492-fcc96c1204ed}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\common\kqf_app.c">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\kqf_cfg.c">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\kqf_init.c">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\kqf_log.c">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="setup.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\common\kqf_app.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\kqf_cfg.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\kqf_init.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\kqf_log.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\kqf_win.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\kqf_ver.h">
+      <Filter>res\common</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="setup.de-DE.rc">
+      <Filter>res</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="setup.en-US.rc">
+      <Filter>res</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="setup.rc">
+      <Filter>res</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="setup.ico">
+      <Filter>res</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="setup.rh">
+      <Filter>res</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="setup.man">
+      <Filter>res</Filter>
+    </CustomBuild>
+    <CustomBuild Include="setup.man.in">
+      <Filter>res</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

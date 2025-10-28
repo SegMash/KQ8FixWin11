@@ -1,0 +1,117 @@
+/*
+ * Copyright (c) 2014,2016,2019 Nico Bendlin <nico@nicode.net>
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+#pragma comment(linker, "/export:"  "??1type_info@@UAE@XZ"      "=_" "_imp_"    "??1type_info@@UAE@XZ")              // public: virtual __thiscall type_info::~type_info(void)
+#pragma comment(linker, "/export:"  "??2@YAPAXI@Z"              "="             "??2MSVCRT@@YAPAXI@Z")               // void * __cdecl operator new(unsigned int)
+#pragma comment(linker, "/export:"  "??3@YAXPAX@Z"              "="             "??3MSVCRT@@YAXPAX@Z")               // void __cdecl operator delete(void *)
+#pragma comment(linker, "/export:"  "?name@type_info@@QBEPBDXZ" "="             "?name@MSVCRT_type_info@@QBEPBDXZ")  // public: char const * __thiscall type_info::name(void)const
+#pragma comment(linker, "/export:"  "?terminate@@YAXXZ"         "=_" "_imp_"    "?terminate@@YAXXZ")                 // void __cdecl terminate(void)
+#pragma comment(linker, "/export:"  "DllGetVersion"             "=_" "RUNTIME_" "DllGetVersion" "@4")
+#pragma comment(linker, "/export:_" "_CIacos"                   "=_"            "_CIacos")
+#pragma comment(linker, "/export:_" "_CIasin"                   "=_"            "_CIasin")
+#pragma comment(linker, "/export:_" "_CIpow"                    "=_"            "_CIpow")
+#pragma comment(linker, "/export:_" "_CxxThrowException"        "=_"            "_CxxThrowException" "@8")
+#pragma comment(linker, "/export:_" "_XcptFilter"               "=_"            "_XcptFilter")
+#pragma comment(linker, "/export:_" "__CxxFrameHandler"         "=_"            "__CxxFrameHandler")
+#pragma comment(linker, "/export:_" "__RTDynamicCast"           "=_" "MSVCRT_"  "__RTDynamicCast")
+#pragma comment(linker, "/export:_" "__RTtypeid"                "=_"            "__RTtypeid")
+#pragma comment(linker, "/export:_" "__dllonexit"               "=_"            "__dllonexit")
+#pragma comment(linker, "/export:_" "__getmainargs"             "=_"            "__getmainargs")
+#pragma comment(linker, "/export:_" "__p__acmdln"               "=_"            "__p__acmdln")
+#pragma comment(linker, "/export:_" "__p__commode"              "=_"            "__p__commode")
+#pragma comment(linker, "/export:_" "__p__fmode"                "=_"            "__p__fmode")
+#pragma comment(linker, "/export:_" "__set_app_type"            "=_" "MSVCRT_"  "__set_app_type")
+#pragma comment(linker, "/export:_" "__setusermatherr"          "=_"            "__setusermatherr")
+#pragma comment(linker, "/export:_" "_adjust_fdiv"              "=_" "_imp__"   "_adjust_fdiv")
+#pragma comment(linker, "/export:_" "_chmod"                    "=_"            "_chmod")
+#pragma comment(linker, "/export:_" "_controlfp"                "=_"            "_controlfp")
+#pragma comment(linker, "/export:_" "_except_handler3"          "=_"            "_except_handler3")
+#pragma comment(linker, "/export:_" "_exit"                     "=_" "MSVCRT_"  "_exit")
+#pragma comment(linker, "/export:_" "_findclose"                "=_" "MSVCRT_"  "_findclose")
+#pragma comment(linker, "/export:_" "_findfirst"                "=_" "MSVCRT_"  "_findfirst")
+#pragma comment(linker, "/export:_" "_findnext"                 "=_" "MSVCRT_"  "_findnext")
+#pragma comment(linker, "/export:_" "_ftime"                    "=_"            "_ftime")
+#pragma comment(linker, "/export:_" "_ftol"                     "=_"            "_ftol")
+#pragma comment(linker, "/export:_" "_getcwd"                   "=_"            "_getcwd")
+#pragma comment(linker, "/export:_" "_initterm"                 "=_"            "_initterm")
+#pragma comment(linker, "/export:_" "_itoa"                     "=_"            "_itoa")
+#pragma comment(linker, "/export:_" "_makepath"                 "=_"            "_makepath")
+#pragma comment(linker, "/export:_" "_onexit"                   "=_" "MSVCRT_"  "_onexit")
+#pragma comment(linker, "/export:_" "_purecall"                 "=_"            "_purecall")
+#pragma comment(linker, "/export:_" "_splitpath"                "=_"            "_splitpath")
+#pragma comment(linker, "/export:_" "_strdate"                  "=_"            "_strdate")
+#pragma comment(linker, "/export:_" "_strdup"                   "=_"            "_strdup")
+#pragma comment(linker, "/export:_" "_stricmp"                  "=_"            "_stricmp")
+#pragma comment(linker, "/export:_" "_strlwr"                   "=_"            "_strlwr")
+#pragma comment(linker, "/export:_" "_strnicmp"                 "=_"            "_strnicmp")
+#pragma comment(linker, "/export:_" "_strtime"                  "=_"            "_strtime")
+#pragma comment(linker, "/export:_" "_strupr"                   "=_"            "_strupr")
+#pragma comment(linker, "/export:_" "atof"                      "=_"            "atof")
+#pragma comment(linker, "/export:_" "atoi"                      "=_"            "atoi")
+#pragma comment(linker, "/export:_" "atol"                      "=_"            "atol")
+#pragma comment(linker, "/export:_" "bsearch"                   "=_"            "bsearch")
+#pragma comment(linker, "/export:_" "ceil"                      "=_"            "ceil")
+#pragma comment(linker, "/export:_" "ctime"                     "=_"            "ctime")
+#pragma comment(linker, "/export:_" "exit"                      "=_" "MSVCRT_"  "exit")
+#pragma comment(linker, "/export:_" "fclose"                    "=_"            "fclose")
+#pragma comment(linker, "/export:_" "fflush"                    "=_"            "fflush")
+#pragma comment(linker, "/export:_" "fgets"                     "=_"            "fgets")
+#pragma comment(linker, "/export:_" "floor"                     "=_"            "floor")
+#pragma comment(linker, "/export:_" "fopen"                     "=_" "MSVCRT_"  "fopen")
+#pragma comment(linker, "/export:_" "fprintf"                   "=_"            "fprintf")
+#pragma comment(linker, "/export:_" "fread"                     "=_"            "fread")
+#pragma comment(linker, "/export:_" "free"                      "=_" "MSVCRT_"  "free")
+#pragma comment(linker, "/export:_" "fseek"                     "=_"            "fseek")
+#pragma comment(linker, "/export:_" "ftell"                     "=_"            "ftell")
+#pragma comment(linker, "/export:_" "fwrite"                    "=_"            "fwrite")
+#pragma comment(linker, "/export:_" "getenv"                    "=_"            "getenv")
+#pragma comment(linker, "/export:_" "isalnum"                   "=_"            "isalnum")
+#pragma comment(linker, "/export:_" "isdigit"                   "=_"            "isdigit")
+#pragma comment(linker, "/export:_" "islower"                   "=_"            "islower")
+#pragma comment(linker, "/export:_" "isprint"                   "=_"            "isprint")
+#pragma comment(linker, "/export:_" "ispunct"                   "=_"            "ispunct")
+#pragma comment(linker, "/export:_" "isspace"                   "=_"            "isspace")
+#pragma comment(linker, "/export:_" "isupper"                   "=_"            "isupper")
+#pragma comment(linker, "/export:_" "iswspace"                  "=_"            "iswspace")
+#pragma comment(linker, "/export:_" "malloc"                    "=_" "MSVCRT_"  "malloc")
+#pragma comment(linker, "/export:_" "memmove"                   "=_"            "memmove")
+#pragma comment(linker, "/export:_" "printf"                    "=_"            "printf")
+#pragma comment(linker, "/export:_" "qsort"                     "=_"            "qsort")
+#pragma comment(linker, "/export:_" "rand"                      "=_"            "rand")
+#pragma comment(linker, "/export:_" "realloc"                   "=_" "MSVCRT_"  "realloc")
+#pragma comment(linker, "/export:_" "remove"                    "=_" "MSVCRT_"  "remove")
+#pragma comment(linker, "/export:_" "rename"                    "=_"            "rename")
+#pragma comment(linker, "/export:_" "sprintf"                   "=_"            "sprintf")
+#pragma comment(linker, "/export:_" "srand"                     "=_"            "srand")
+#pragma comment(linker, "/export:_" "sscanf"                    "=_"            "sscanf")
+#pragma comment(linker, "/export:_" "strchr"                    "=_"            "strchr")
+#pragma comment(linker, "/export:_" "strncat"                   "=_"            "strncat")
+#pragma comment(linker, "/export:_" "strncmp"                   "=_"            "strncmp")
+#pragma comment(linker, "/export:_" "strncpy"                   "=_"            "strncpy")
+#pragma comment(linker, "/export:_" "strrchr"                   "=_"            "strrchr")
+#pragma comment(linker, "/export:_" "strstr"                    "=_"            "strstr")
+#pragma comment(linker, "/export:_" "strtod"                    "=_"            "strtod")
+#pragma comment(linker, "/export:_" "strtok"                    "=_"            "strtok")
+#pragma comment(linker, "/export:_" "strtol"                    "=_"            "strtol")
+#pragma comment(linker, "/export:_" "strtoul"                   "=_"            "strtoul")
+#pragma comment(linker, "/export:_" "tolower"                   "=_"            "tolower")
+#pragma comment(linker, "/export:_" "toupper"                   "=_"            "toupper")
+#pragma comment(linker, "/export:_" "vsprintf"                  "=_"            "vsprintf")
