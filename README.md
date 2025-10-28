@@ -24,7 +24,7 @@ The original project was designed to support KQ8 on Windows 10 and earlier versi
 ### Installation Steps
 
 1. **Download the base game**: Get the latest known KQ8 from GOG (version 1.03)
-2. **Download the compatibility fix**: Download `kq8fix_win11.zip` from the releases section
+2. **Download the compatibility fix**: Download [the patch](https://github.com/SegMash/KQ8FixWin11/releases/download/10_25/KQ8_Win11_Patch.zip)
 3. **Extract files**: Extract the zip contents to your KQ8 game folder
 4. **Run setup**: Execute `kqmoepfd.cmd` to enable no CD.
 5. **Launch the fix**: Run `kq8fix.exe` and check the box `Mask.exe`
