@@ -397,17 +397,7 @@ void  __cdecl MSVCRT___set_app_type (int at)
 			kqf_log(KQF_LOGL_NOTICE, "runtime: loaded by '%s' in '%s' (game: %i, base: %#08lx)\n", kqf_app.name, kqf_app.path, kqf_app.info.version, kqf_app.inst);
 		}
 		crash_dump_init();
-		/*HMODULE hMciavi = LoadLibraryA("mciavi32.dll");
-		if (hMciavi) {
-			kqf_log(KQF_LOGL_NOTICE, "Successfully loaded mciavi32.dll\n");
-		}
-		else {
-			kqf_log(KQF_LOGL_NOTICE, "Failed to load mciavi32.dll: %lu\n", GetLastError());
-		}
-
-		HMODULE hMciavi_early = GetModuleHandleA("mciavi32.dll");
-		kqf_log(KQF_LOGL_NOTICE, "mciavi32.dll loaded at startup: %s\n", hMciavi_early ? "Yes" : "No");
-		*/
+		
 		if (kqf_app.info.imports) {
 			int tracing = (kqf_get_log_level() >= KQF_LOGL_TRACE);
 			if (tracing || (kqf_get_opt(KQF_CFGO_MASK_DBG) != KQF_OPT_MASK_DBG_CALL)) {
@@ -507,9 +497,6 @@ void  __cdecl MSVCRT___set_app_type (int at)
 			hook_GFXClearScreen();
 			patch_D3DTotalVideoMemory();
 			patch_BrightnessSlider();
-			if (kqf_get_opt(KQF_CFGO_TEXT_HEBREW_RTL)) {
-				//init_rtl_text();
-			}
 		}
 		apply_single_proc();
 		kqf_log(KQF_LOGL_NOTICE, "runtime: init done\n");
