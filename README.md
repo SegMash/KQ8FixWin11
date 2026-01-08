@@ -40,7 +40,8 @@ The original project was designed to support KQ8 on Windows 10 and earlier versi
 - **Mouse cursor issues**: If using the new Windows 11 Media Player and the cursor becomes locked after video playback, click the mouse to release it
 - **VLC compatibility**: VLC player works but may introduce noticeable latency during video playback
 - **Skip intro videos**: To bypass intro videos, edit `main.kq` file and set `aviPlayed=1`
-
+- **DirectDraw of 3dfx**: This patch was built for 3dfx, I noticed that other modes are not working good, in anycase - if you wish, you can remove the glide2x.dll file, and then you will play automatically in DirectDraw mode.
+- **Camera rotation lag in 3dfx**: This is probably a known problem that has always been there. I recommend working with a resolution of 600X800. It worked better for me. As of now, I haven't found an ideal solution for this and I doubt it will ever be found. Anyone who finds it difficult can always switch to playing in DirectDraw mode.
 ## Technical Details
 
 This compatibility fix addresses several Windows 11-specific issues:
